@@ -1,5 +1,6 @@
 import React from "react"
-import { NavLink } from "react-router-dom"
+import { Link, NavLink } from "react-router-dom"
+import { Tooltip } from "react-tooltip"
 
 const Navbar = () => {
     const navlinks = (
@@ -8,10 +9,13 @@ const Navbar = () => {
                 <NavLink to="/">Home</NavLink>
             </li>
             <li className="mx-2 font-medium">
-                <NavLink to="/feedback">FAQ</NavLink>
+                <NavLink to="/all-tourists-spot">All Tourists Spot</NavLink>
             </li>
             <li className="mx-2 font-medium">
-                <NavLink to="/updateProfile">Update Profile</NavLink>
+                <NavLink to="/add-tourists-spot">Add Tourists Spot</NavLink>
+            </li>
+            <li className="mx-2 font-medium">
+                <NavLink to="/my-list">My List</NavLink>
             </li>
         </>
     )
@@ -38,13 +42,34 @@ const Navbar = () => {
                             {navlinks}
                         </ul>
                     </div>
-                    <a className="btn btn-ghost text-xl">TourEase</a>
+                    <Link to="/" className="btn btn-ghost md:text-xl">
+                        TourEase
+                    </Link>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1">{navlinks}</ul>
                 </div>
-                <div className="navbar-end">
-                    <a className="btn">Button</a>
+                <div className="navbar-end flex gap-4">
+                    <Link to="/login" className="btn">
+                        Login
+                    </Link>
+                    <Link to="/register" className="btn">
+                        Register
+                    </Link>
+                    <div
+                        data-tooltip-id="my-tooltip"
+                        data-tooltip-content={"user.displayName"}
+                        data-tooltip-place="bottom"
+                        className="bg-neutral text-neutral-content text-sm rounded-full w-10"
+                    >
+                        <span>
+                            <img src="{user.photoURL}" alt="img" />
+                        </span>
+                    </div>
+                    <Tooltip id="my-tooltip" />
+                    <div>
+                        <button className="btn">Logout</button>
+                    </div>
                 </div>
             </div>
         </div>
