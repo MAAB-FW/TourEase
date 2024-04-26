@@ -1,43 +1,38 @@
 import React from "react"
+import { FaFacebook, FaInstagram, FaTwitter } from "react-icons/fa"
 
 const Footer = () => {
     return (
-        <div>
-            <footer className="footer p-10 bg-base-200 text-base-content">
-                <nav>
-                    <h6 className="footer-title">Services</h6>
-                    <a className="link link-hover">Branding</a>
-                    <a className="link link-hover">Design</a>
-                    <a className="link link-hover">Marketing</a>
-                    <a className="link link-hover">Advertisement</a>
-                </nav>
-                <nav>
-                    <h6 className="footer-title">Company</h6>
-                    <a className="link link-hover">About us</a>
-                    <a className="link link-hover">Contact</a>
-                    <a className="link link-hover">Jobs</a>
-                    <a className="link link-hover">Press kit</a>
-                </nav>
-                <nav>
-                    <h6 className="footer-title">Legal</h6>
-                    <a className="link link-hover">Terms of use</a>
-                    <a className="link link-hover">Privacy policy</a>
-                    <a className="link link-hover">Cookie policy</a>
-                </nav>
-                <form>
-                    <h6 className="footer-title">Newsletter</h6>
-                    <fieldset className="form-control w-80">
-                        <label className="label">
-                            <span className="label-text">Enter your email address</span>
-                        </label>
-                        <div className="join">
-                            <input type="text" placeholder="username@site.com" className="input input-bordered join-item" />
-                            <button className="btn btn-primary join-item">Subscribe</button>
+        <div className="dark:bg-[#e7e7e7] bg-gray-900 mx-auto">
+            <footer className="w-[83%] mx-auto text-white py-8">
+                <div className=" mx-auto flex flex-wrap justify-between">
+                    <div className="w-full md:w-1/3 lg:w-auto mb-8 md:mb-0">
+                        <h4 className="text-lg font-bold mb-4">TourEase</h4>
+                    </div>
+                    <div className="w-full md:w-1/3 lg:w-auto mb-8 md:mb-0">
+                        <h4 className="text-lg font-bold mb-4">Contact Us</h4>
+                        <p className="text-sm">Email: info@tourease.com</p>
+                        <p className="text-sm">Phone: +1 (123) 456-7890</p>
+                    </div>
+                    <div className="w-full md:w-1/3 lg:w-auto">
+                        <h4 className="text-lg font-bold mb-4">Follow Us</h4>
+                        <div className="flex">
+                            <a href="" className="mr-4">
+                                <FaFacebook className="text-white" />
+                            </a>
+                            <a href="" className="mr-4">
+                                <FaTwitter className="text-white" />
+                            </a>
+                            <a href="">
+                                <FaInstagram className="text-white" />
+                            </a>
                         </div>
-                    </fieldset>
-                </form>
+                    </div>
+                </div>
             </footer>
+            <h4 className="mb-4 text-center  text-white">© 2024 TourEase. All rights reserved.</h4>
         </div>
+
     )
 }
 

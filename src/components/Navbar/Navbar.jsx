@@ -5,16 +5,16 @@ import { Tooltip } from "react-tooltip"
 const Navbar = () => {
     const navlinks = (
         <>
-            <li className="mx-2 font-medium">
+            <li className="mx-1 font-semibold">
                 <NavLink to="/">Home</NavLink>
             </li>
-            <li className="mx-2 font-medium">
+            <li className="mx-1 font-semibold">
                 <NavLink to="/all-tourists-spot">All Tourists Spot</NavLink>
             </li>
-            <li className="mx-2 font-medium">
+            <li className="mx-1 font-semibold">
                 <NavLink to="/add-tourists-spot">Add Tourists Spot</NavLink>
             </li>
-            <li className="mx-2 font-medium">
+            <li className="mx-1 font-semibold">
                 <NavLink to="/my-list">My List</NavLink>
             </li>
         </>
@@ -49,27 +49,31 @@ const Navbar = () => {
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1">{navlinks}</ul>
                 </div>
-                <div className="navbar-end flex gap-4">
-                    <Link to="/login" className="btn">
-                        Login
-                    </Link>
-                    <Link to="/register" className="btn">
-                        Register
-                    </Link>
-                    <div
-                        data-tooltip-id="my-tooltip"
-                        data-tooltip-content={"user.displayName"}
-                        data-tooltip-place="bottom"
-                        className="bg-neutral text-neutral-content text-sm rounded-full w-10"
-                    >
-                        <span>
-                            <img src="{user.photoURL}" alt="img" />
-                        </span>
-                    </div>
-                    <Tooltip id="my-tooltip" />
-                    <div>
-                        <button className="btn">Logout</button>
-                    </div>
+                <div className="navbar-end *:flex ">
+                    <>
+                        <Link to="/login" className="btn">
+                            Login
+                        </Link>
+                        <Link to="/register" className="btn ml-2">
+                            Register
+                        </Link>
+                    </>
+                    {/* <>
+                        <div
+                            data-tooltip-id="my-tooltip"
+                            data-tooltip-content={"user.displayName"}
+                            data-tooltip-place="bottom"
+                            className="bg-neutral text-neutral-content text-sm rounded-full w-10"
+                        >
+                            <span>
+                                <img src="{user.photoURL}" alt="img" />
+                            </span>
+                            <Tooltip id="my-tooltip" />
+                        </div>
+                        <div className="ml-2">
+                            <button className="btn">Logout</button>
+                        </div>
+                    </> */}
                 </div>
             </div>
         </div>
