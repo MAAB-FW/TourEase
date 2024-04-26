@@ -10,6 +10,8 @@ import AddTouristsSpot from "./pages/AddTouristsSpot/AddTouristsSpot.jsx"
 import MyList from "./pages/MyList/MyList.jsx"
 import Login from "./pages/Login/Login.jsx"
 import Register from "./pages/Register/Register.jsx"
+import PrivateRoute from "./routes/PrivateRoute/PrivateRoute.jsx"
+import AuthProvider from "./routes/AuthProvider/AuthProvider.jsx"
 
 const router = createBrowserRouter([
     {
@@ -27,11 +29,19 @@ const router = createBrowserRouter([
             },
             {
                 path: "/add-tourists-spot",
-                element: <AddTouristsSpot></AddTouristsSpot>,
+                element: (
+                    <PrivateRoute>
+                        <AddTouristsSpot></AddTouristsSpot>
+                    </PrivateRoute>
+                ),
             },
             {
                 path: "/my-list",
-                element: <MyList></MyList>,
+                element: (
+                    <PrivateRoute>
+                        <MyList></MyList>
+                    </PrivateRoute>
+                ),
             },
             {
                 path: "/login",
@@ -41,13 +51,14 @@ const router = createBrowserRouter([
                 path: "/register",
                 element: <Register></Register>,
             },
-
         ],
     },
 ])
 
 ReactDOM.createRoot(document.getElementById("root")).render(
     <React.StrictMode>
-        <RouterProvider router={router} />
+        <AuthProvider>
+            <RouterProvider router={router} />
+        </AuthProvider>
     </React.StrictMode>,
 )

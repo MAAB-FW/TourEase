@@ -20,8 +20,8 @@ const Navbar = () => {
         </>
     )
     return (
-        <div>
-            <div className="navbar bg-base-100">
+        <div className="my-3">
+            <div className="navbar bg-base-100 p-0">
                 <div className="navbar-start">
                     <div className="dropdown">
                         <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -42,7 +42,7 @@ const Navbar = () => {
                             {navlinks}
                         </ul>
                     </div>
-                    <Link to="/" className="btn btn-ghost md:text-xl">
+                    <Link to="/" className="btn hidden md:flex btn-ghost md:text-xl">
                         TourEase
                     </Link>
                 </div>

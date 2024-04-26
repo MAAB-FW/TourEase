@@ -7,7 +7,7 @@ const Footer = () => {
             <footer className="w-[83%] mx-auto text-white py-8">
                 <div className=" mx-auto flex flex-wrap justify-between">
                     <div className="w-full md:w-1/3 lg:w-auto mb-8 md:mb-0">
-                        <h4 className="text-lg font-bold mb-4">TourEase</h4>
+                        <h4 className="text-lg md:text-2xl font-bold mb-4">TourEase</h4>
                     </div>
                     <div className="w-full md:w-1/3 lg:w-auto mb-8 md:mb-0">
                         <h4 className="text-lg font-bold mb-4">Contact Us</h4>
@@ -30,7 +30,7 @@ const Footer = () => {
                     </div>
                 </div>
             </footer>
-            <h4 className="mb-4 text-center  text-white">© 2024 TourEase. All rights reserved.</h4>
+            <h4 className="py-4 text-sm md:text-base text-center text-white">© 2024 TourEase. All rights reserved.</h4>
         </div>
 
     )
