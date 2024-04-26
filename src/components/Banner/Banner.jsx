@@ -71,13 +71,12 @@ const Banner = () => {
                             <div className="max-w-xl text-center ltr:sm:text-left rtl:sm:text-right">
                                 <h1 className="text-3xl text-white font-extrabold sm:text-5xl">
                                     {/* &quot;Discover your&quot; */}
-                                    Cox’s Bazar
+                                    Bangkok
                                     {/* <strong className="block font-extrabold text-primary"> Next adventure!</strong> */}
                                 </h1>
                                 <p className="mt-4 text-white max-w-lg sm:text-xl/relaxed">
-                                    Immerse yourself in the breathtaking beauty of Cox’s Bazar, where golden sands stretch as far
-                                    as the eye can see. Bask in the tranquility of pristine beaches and rejuvenate your soul
-                                    amidst nature’s splendor.
+                                    Step into a world of wonder in Bangkok, where gleaming temples, bustling markets, and serene
+                                    canals create a tapestry of experiences waiting to be explored.
                                 </p>
                                 {/* <div className="mt-8 flex flex-wrap gap-4 text-center">
                                     <a
@@ -99,19 +98,19 @@ const Banner = () => {
                     </section>
                 </SwiperSlide>
                 <SwiperSlide>
-                    <section className="relative h-[400px] md:h-[500px] bg-[url(https://img.freepik.com/free-photo/small-house-built-peaceful-green-hill-high-up-mountains_181624-8241.jpg?t=st=1714133645~exp=1714137245~hmac=241bda9a32d1ad960a2b877894d3cc625130c04fa4c5b72be5d88b335b3ef58b&w=740)] bg-cover bg-center bg-no-repeat">
+                    <section className="relative h-[400px] md:h-[500px] bg-[url(https://img.freepik.com/free-photo/beautiful-seaside-landscape_23-2150423925.jpg?t=st=1714135213~exp=1714138813~hmac=7fa424322290725b7e2bc857407b32a60557d22958128b73127e4b8443e7d68f&w=740)] bg-cover bg-center bg-no-repeat">
                         <div className="absolute inset-0 bg-slate-700 opacity-45 //bg-white/75=sm:bg-transparent=sm:from-white/95=sm:to-white/25=ltr:sm:bg-gradient-to-r=rtl:sm:bg-gradient-to-l"></div>
 
                         <div className="relative mx-auto px-4 py-32 sm:px-6 lg:flex  lg:items-center lg:px-8">
                             <div className="max-w-xl text-center ltr:sm:text-left rtl:sm:text-right">
                                 <h1 className="text-3xl text-white font-extrabold sm:text-5xl">
                                     {/* &quot;Discover your&quot; */}
-                                    Rangamati
+                                    Langkawi
                                     {/* <strong className="block font-extrabold text-primary"> Next adventure!</strong> */}
                                 </h1>
                                 <p className="mt-4 text-white max-w-lg sm:text-xl/relaxed">
-                                    Discover the serene beauty of Rangamati, nestled amidst lush green hills and shimmering lakes.
-                                    Explore indigenous culture, embark on scenic boat rides, and unwind in the lap of nature.
+                                    Experience the thrill of Langkawi's outdoor adventures, from zip-lining through the rainforest
+                                    canopy to snorkeling in vibrant coral reefs.
                                 </p>
                                 {/* <div className="mt-8 flex flex-wrap gap-4 text-center">
                                     <a

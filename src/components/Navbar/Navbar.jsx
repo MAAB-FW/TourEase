@@ -141,7 +141,7 @@ const Navbar = () => {
                                 data-tooltip-id="my-tooltip"
                                 data-tooltip-content={user.displayName}
                                 data-tooltip-place="bottom"
-                                className="bg-neutral text-neutral-content text-sm rounded-full w-10"
+                                className="border text-neutral-content text-sm rounded-full w-10"
                             >
                                 <span>
                                     <img className="rounded-full" src={user.photoURL} alt="img" />
