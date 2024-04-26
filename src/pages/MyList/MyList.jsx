@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from "react"
 import { AuthContext } from "../../routes/AuthProvider/AuthProvider"
 import SingleTouristCard from "../../components/SingleTouristCard/SingleTouristCard"
-import { Link } from "react-router-dom"
+import EmptyMsg from "../../components/EmptyMsg/EmptyMsg"
 
 const MyList = () => {
     const { user } = useContext(AuthContext)
@@ -16,17 +16,7 @@ const MyList = () => {
             })
     }, [user])
 
-    if (allData.length < 1)
-        return (
-            <div className="text-center text-3xl font-bold h-screen flex flex-col gap-7 items-center justify-center ">
-                <p>
-                    <span className="text-error">Oops!&#160;</span> No Data Found
-                </p>
-                <Link to="/add-tourists-spot" className="btn btn-success">
-                    Add Tourists Spot
-                </Link>
-            </div>
-        )
+    if (allData.length < 1) return <EmptyMsg></EmptyMsg>
 
     return (
         <div>
