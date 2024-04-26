@@ -4,9 +4,12 @@ export default {
     theme: {
         extend: {
             fontFamily: {
-                "mont": "Montserrat, sans-serif",
+                mont: "Montserrat, sans-serif",
             },
         },
     },
     plugins: [require("daisyui")],
+    daisyui: {
+        themes: ["light", "dark"],
+    },
 }
