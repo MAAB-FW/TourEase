@@ -10,7 +10,7 @@ const TouristsSpots = ({ loadedAllData }) => {
                 <p className="mt-3">Start exploring now and let the adventure begin!</p>
             </div>
             <div className="mt-16 grid gap-6 grid-cols-2 md:grid-cols-2 lg:grid-cols-3">
-                {loadedAllData?.map((touristSpot) => (
+                {loadedAllData?.slice(0, 6).map((touristSpot) => (
                     <SingleTouristCard key={touristSpot._id}></SingleTouristCard>
                 ))}
             </div>

@@ -14,7 +14,7 @@ const AddTouristsSpot = () => {
         const location = form.location.value
         const short_description = form.short_description.value
         const average_cost = form.average_cost.value
-        const seasonality = form.seasonality.option
+        const seasonality = form.seasonality.value
         const travel_time = form.travel_time.value
         const total_visitors_per_year = form.total_visitors_per_year.value
         const user_email = user.email
@@ -99,13 +99,19 @@ const AddTouristsSpot = () => {
                             <label htmlFor="country_name" className="block uppercase tracking-wide text-xs font-bold mb-2">
                                 Country Name
                             </label>
-                            <input
+                            <select
                                 name="country_name"
                                 id="country_name"
-                                type="text"
                                 className="appearance-none block w-full bg-gray-200 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
                                 placeholder="Enter country name"
-                            />
+                            >
+                                <option value="Bangladesh">Bangladesh</option>
+                                <option value="Thailand">Thailand</option>
+                                <option value="Indonesia">Indonesia</option>
+                                <option value="Malaysia">Malaysia</option>
+                                <option value="Vietnam">Vietnam</option>
+                                <option value="Cambodia">Cambodia</option>
+                            </select>
                         </div>
                     </div>
                     <div className="w-full px-3 mb-6">
