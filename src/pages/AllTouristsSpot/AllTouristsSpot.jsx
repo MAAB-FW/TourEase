@@ -3,7 +3,7 @@ import { useLoaderData } from "react-router-dom"
 import SingleTouristCard from "../../components/SingleTouristCard/SingleTouristCard"
 
 const AllTouristsSpot = () => {
-    const allData = useLoaderData()
+    const allData = useLoaderData() ||{}
     console.log(allData)
     return (
         <div>
