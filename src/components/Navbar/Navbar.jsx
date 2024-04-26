@@ -1,8 +1,38 @@
-import React from "react"
+import React, { useContext } from "react"
 import { Link, NavLink } from "react-router-dom"
 import { Tooltip } from "react-tooltip"
+import { AuthContext } from "../../routes/AuthProvider/AuthProvider"
+import toast from "react-hot-toast"
+import Swal from "sweetalert2"
 
 const Navbar = () => {
+    const { user, logoutUser, setUser } = useContext(AuthContext)
+    console.log(user)
+
+    const handleLogout = () => {
+        Swal.fire({
+            title: "Do you want to log out?",
+            // text: "You won't be able to revert this!",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Yes, Log out!",
+        }).then((result) => {
+            if (result.isConfirmed) {
+                logoutUser()
+                    .then(() => {
+                        setUser(null)
+                        toast.success("Successfully logged out!")
+                    })
+                    .catch((e) => {
+                        console.log(e)
+                        toast.error("An error Occur!")
+                    })
+            }
+        })
+    }
+
     const navlinks = (
         <>
             <li className="mx-1 font-semibold">
@@ -50,30 +80,35 @@ const Navbar = () => {
                     <ul className="menu menu-horizontal px-1">{navlinks}</ul>
                 </div>
                 <div className="navbar-end *:flex ">
-                    <>
-                        <Link to="/login" className="btn">
-                            Login
-                        </Link>
-                        <Link to="/register" className="btn ml-2">
-                            Register
-                        </Link>
-                    </>
-                    {/* <>
-                        <div
-                            data-tooltip-id="my-tooltip"
-                            data-tooltip-content={"user.displayName"}
-                            data-tooltip-place="bottom"
-                            className="bg-neutral text-neutral-content text-sm rounded-full w-10"
-                        >
-                            <span>
-                                <img src="{user.photoURL}" alt="img" />
-                            </span>
-                            <Tooltip id="my-tooltip" />
-                        </div>
-                        <div className="ml-2">
-                            <button className="btn">Logout</button>
-                        </div>
-                    </> */}
+                    {!user ? (
+                        <>
+                            <Link to="/login" className="btn">
+                                Login
+                            </Link>
+                            <Link to="/register" className="btn ml-2">
+                                Register
+                            </Link>
+                        </>
+                    ) : (
+                        <>
+                            <div
+                                data-tooltip-id="my-tooltip"
+                                data-tooltip-content={user.displayName}
+                                data-tooltip-place="bottom"
+                                className="bg-neutral text-neutral-content text-sm rounded-full w-10"
+                            >
+                                <span>
+                                    <img className="rounded-full" src={user.photoURL} alt="img" />
+                                </span>
+                                <Tooltip id="my-tooltip" />
+                            </div>
+                            <div className="ml-2">
+                                <button onClick={handleLogout} className="btn">
+                                    Log out
+                                </button>
+                            </div>
+                        </>
+                    )}
                 </div>
             </div>
         </div>

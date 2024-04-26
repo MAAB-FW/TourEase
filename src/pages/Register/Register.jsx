@@ -5,7 +5,7 @@ import { Link, useNavigate } from "react-router-dom"
 import { AuthContext } from "../../routes/AuthProvider/AuthProvider"
 
 const Register = () => {
-    const { createUser, updateUserDetails, logoutUser, setUser } = useContext(AuthContext)
+    const { createUser, updateUser, logoutUser, setUser } = useContext(AuthContext)
     const navigate = useNavigate()
 
     const {
@@ -22,9 +22,9 @@ const Register = () => {
         createUser(email, password)
             .then((r) => {
                 console.log(r.user)
-                updateUserDetails(name, photo)
+                toast.success("Successfully Registered!")
+                updateUser(name, photo)
                     .then(() => {
-                        toast.success("Successfully Registered!")
                         navigate("/login")
                         logoutUser()
                             .then(() => {
@@ -53,11 +53,11 @@ const Register = () => {
                         TourEase
                     </a> */}
                     <div className="w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700">
-                        <div onSubmit={handleSubmit(onSubmit)} className="p-6 space-y-4 md:space-y-6 sm:p-8">
+                        <div className="p-6 space-y-4 md:space-y-6 sm:p-8">
                             <h1 className="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
                                 Register to your account
                             </h1>
-                            <form className="space-y-4 md:space-y-6">
+                            <form onSubmit={handleSubmit(onSubmit)} className="space-y-4 md:space-y-6">
                                 <div>
                                     <label
                                         htmlFor="name"

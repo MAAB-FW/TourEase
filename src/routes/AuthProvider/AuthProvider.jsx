@@ -1,9 +1,21 @@
-import { createUserWithEmailAndPassword, signOut, updateProfile } from "firebase/auth"
-import React, { createContext, useState } from "react"
+import {
+    GithubAuthProvider,
+    GoogleAuthProvider,
+    createUserWithEmailAndPassword,
+    onAuthStateChanged,
+    signInWithEmailAndPassword,
+    signInWithPopup,
+    signOut,
+    updateProfile,
+} from "firebase/auth"
+import React, { createContext, useEffect, useState } from "react"
 import auth from "../../firebase/firebase.config"
-import PropTypes from 'prop-types'
+import PropTypes from "prop-types"
 
 export const AuthContext = createContext()
+
+const googleProvider = new GoogleAuthProvider()
+const githubProvider = new GithubAuthProvider()
 
 const AuthProvider = ({ children }) => {
     const [user, setUser] = useState(null)
@@ -16,7 +28,7 @@ const AuthProvider = ({ children }) => {
     }
 
     // update User info
-    const updateUserDetails = (name, photo) => {
+    const updateUser = (name, photo) => {
         setLoading(true)
         return updateProfile(auth.currentUser, {
             displayName: name,
@@ -25,7 +37,30 @@ const AuthProvider = ({ children }) => {
     }
 
     // login user
-    // const 
+    const loginUser = (email, password) => {
+        setLoading(true)
+        return signInWithEmailAndPassword(auth, email, password)
+    }
+
+    // google login
+    const googleLogin = () => {
+        setLoading(true)
+        return signInWithPopup(auth, googleProvider)
+    }
+
+    // github login
+    const githubLogin = () => {
+        setLoading(true)
+        return signInWithPopup(auth, githubProvider)
+    }
+
+    useEffect(() => {
+        const unSubscribe = onAuthStateChanged(auth, (currentUser) => {
+            setUser(currentUser)
+            setLoading(false)
+        })
+        return () => unSubscribe()
+    }, [])
 
     // log out user
     const logoutUser = () => {
@@ -33,7 +68,18 @@ const AuthProvider = ({ children }) => {
         return signOut(auth)
     }
 
-    const authData = { createUser, loading, setLoading, user, setUser, updateUserDetails, logoutUser }
+    const authData = {
+        createUser,
+        loading,
+        setLoading,
+        user,
+        setUser,
+        updateUser,
+        logoutUser,
+        loginUser,
+        googleLogin,
+        githubLogin,
+    }
     return <AuthContext.Provider value={authData}>{children}</AuthContext.Provider>
 }
 
