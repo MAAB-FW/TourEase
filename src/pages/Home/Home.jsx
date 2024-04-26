@@ -1,18 +1,21 @@
-import React from 'react';
-import Banner from '../../components/Banner/Banner';
-import TouristsSpots from '../../components/TouristsSpots/TouristsSpots';
-import CountriesSection from '../../components/CountriesSection/CountriesSection';
+import Banner from "../../components/Banner/Banner"
+import TouristsSpots from "../../components/TouristsSpots/TouristsSpots"
+import CountriesSection from "../../components/CountriesSection/CountriesSection"
+import { useLoaderData } from "react-router-dom"
 
 const Home = () => {
+    const loadedAllData = useLoaderData()
     return (
         <div>
             <Banner></Banner>
-            <TouristsSpots></TouristsSpots>
+            <TouristsSpots
+                loadedAllData={loadedAllData}
+            ></TouristsSpots>
             <CountriesSection></CountriesSection>
             {/* one extra */}
             {/* two extra */}
         </div>
-    );
-};
+    )
+}
 
-export default Home;
+export default Home
