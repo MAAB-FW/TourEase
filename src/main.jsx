@@ -24,12 +24,12 @@ const router = createBrowserRouter([
             {
                 path: "/",
                 element: <Home></Home>,
-                loader: () => fetch("http://localhost:5000/all-tourists-spot"),
+                // loader: () => fetch("http://localhost:5000/all-tourists-spot"),
             },
             {
                 path: "/all-tourists-spot",
                 element: <AllTouristsSpot></AllTouristsSpot>,
-                loader: () => fetch("http://localhost:5000/all-tourists-spot"),
+                // loader: () => fetch("http://localhost:5000/all-tourists-spot"),
             },
             {
                 path: "/add-tourists-spot",

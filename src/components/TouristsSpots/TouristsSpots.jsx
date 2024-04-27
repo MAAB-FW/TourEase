@@ -1,8 +1,19 @@
-import React from "react"
+import React, { useEffect, useState } from "react"
 import SingleTouristCard from "../SingleTouristCard/SingleTouristCard"
 import PropTypes from "prop-types"
 
-const TouristsSpots = ({ loadedAllData }) => {
+const TouristsSpots = () => {
+    const [loadedAllData, setLoadedAllData] = useState([])
+
+    useEffect(() => {
+        fetch("http://localhost:5000/all-tourists-spot")
+            .then((res) => res.json())
+            .then((data) => {
+                console.log(data)
+                setLoadedAllData(data)
+            })
+    }, [])
+
     return (
         <div className="my-24">
             <div className="text-center">

@@ -3,6 +3,7 @@ import { AuthContext } from "../../routes/AuthProvider/AuthProvider"
 import EmptyMsg from "../../components/EmptyMsg/EmptyMsg"
 import Loading from "../../components/Loading/Loading"
 import { Link } from "react-router-dom"
+import Swal from "sweetalert2"
 
 const MyList = () => {
     const { user, loading, setLoading } = useContext(AuthContext)
@@ -20,7 +21,35 @@ const MyList = () => {
     }, [user, setLoading])
 
     const handleDelete = (id) => {
-        
+        console.log(id)
+        Swal.fire({
+            title: "Are you sure?",
+            text: "You won't be able to revert this!",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Yes, delete it!",
+        }).then((result) => {
+            if (result.isConfirmed) {
+                fetch(`http://localhost:5000/delete/${id}`, {
+                    method: "DELETE",
+                })
+                    .then((res) => res.json())
+                    .then((data) => {
+                        console.log(data)
+                        if (data.deletedCount > 0) {
+                            const remaining = allData.filter((data) => data._id !== id)
+                            setAllData(remaining)
+                            Swal.fire({
+                                title: "Deleted!",
+                                text: "Your data has been deleted.",
+                                icon: "success",
+                            })
+                        }
+                    })
+            }
+        })
     }
 
     if (loading) return <Loading></Loading>
@@ -29,7 +58,7 @@ const MyList = () => {
 
     return (
         <div className="my-10 mb-20">
-            <p className="text-center font-bold text-3xl my-8 text-info">My List</p>
+            <p className="text-center font-bold text-3xl my-8 text-info">My List({allData.length})</p>
             <div className="relative my- border flex flex-col bg-white md:w-full shadow-lg rounded-xl ">
                 <div className="block w-full overflow-x-auto">
                     <table className="items-center bg-transparent w-full border-collapse ">
@@ -66,7 +95,7 @@ const MyList = () => {
                                         <Link to={`/update-page/${touristSpot._id}`} className="btn bg-warning">
                                             Update
                                         </Link>
-                                        <button onClick={handleDelete} className="btn bg-error text-white">
+                                        <button onClick={() => handleDelete(touristSpot._id)} className="btn bg-error text-white">
                                             Delete
                                         </button>
                                     </td>
