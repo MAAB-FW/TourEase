@@ -18,15 +18,15 @@ const SingleTouristCard = ({ touristSpot }) => {
 
     return (
         <div>
-            <div className="card p-5 h-full justify-between bg-base-100 shadow-xl">
+            <div className="p-5 h-full justify-between bg-base-100 shadow-xl">
                 <div>
                     <figure>
                         <img className="rounded-2xl max-h-56" src={image} alt={tourists_spot_name} />
                     </figure>
                     <div className="my-4">
                         <h2 className="font-bold text-2xl">{tourists_spot_name}</h2>
-                        <h2 className="text-right font-bold text-rose-600 text-xl">{country_name}</h2>
-                        <p className="text-[#1f2937] font-sans overflow-hidden text-wrap">
+                        {/* <h2 className="text-right font-bold text-rose-600 text-xl">{country_name}</h2> */}
+                        <p className="text-[#1f2937] mt-3 font-sans overflow-hidden text-wrap">
                             {short_description.split("").slice(0, 100).join("")}...
                         </p>
                     </div>

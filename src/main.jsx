@@ -14,7 +14,7 @@ import PrivateRoute from "./routes/PrivateRoute/PrivateRoute.jsx"
 import AuthProvider from "./routes/AuthProvider/AuthProvider.jsx"
 import { Toaster } from "react-hot-toast"
 import UpdatePage from "./pages/UpdatePage/UpdatePage.jsx"
-import ViewDetails from './pages/ViewDetails/ViewDetails.jsx';
+import ViewDetails from "./pages/ViewDetails/ViewDetails.jsx"
 
 const router = createBrowserRouter([
     {
@@ -55,11 +55,16 @@ const router = createBrowserRouter([
                         <UpdatePage></UpdatePage>
                     </PrivateRoute>
                 ),
-                loader:({params})=>fetch(`http://localhost:5000/one-tourist-spot/${params.id}`)
+                loader: ({ params }) => fetch(`http://localhost:5000/one-tourist-spot/${params.id}`),
             },
             {
                 path: `/view-details/:id`,
-                element: <ViewDetails></ViewDetails>
+                element: (
+                    <PrivateRoute>
+                        <ViewDetails></ViewDetails>
+                    </PrivateRoute>
+                ),
+                loader: ({ params }) => fetch(`http://localhost:5000/one-tourist-spot/${params.id}`),
             },
             {
                 path: "/login",

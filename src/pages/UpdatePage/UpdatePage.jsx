@@ -3,7 +3,7 @@ import { useLoaderData } from "react-router-dom"
 import Swal from "sweetalert2"
 
 const UpdatePage = () => {
-    const loadedData = useLoaderData()
+    const loadedData = useLoaderData() || {}
 
     const [singleData, setSingleData] = useState(loadedData)
 
