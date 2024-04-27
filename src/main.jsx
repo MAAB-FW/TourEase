@@ -55,6 +55,7 @@ const router = createBrowserRouter([
                         <UpdatePage></UpdatePage>
                     </PrivateRoute>
                 ),
+                loader:({params})=>fetch(`http://localhost:5000/one-tourist-spot/${params.id}`)
             },
             {
                 path: `/view-details/:id`,
