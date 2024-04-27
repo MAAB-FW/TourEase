@@ -4,6 +4,7 @@ import "swiper/css"
 import "swiper/css/pagination"
 import "swiper/css/navigation"
 import { Pagination, Navigation, Autoplay } from "swiper/modules"
+import { Typewriter } from "react-simple-typewriter"
 
 const Banner = () => {
     return (
@@ -37,7 +38,12 @@ const Banner = () => {
                             <div className="max-w-xl text-center ltr:sm:text-left rtl:sm:text-right">
                                 <h1 className="text-3xl text-white font-extrabold sm:text-5xl">
                                     {/* &quot;Discover your&quot; */}
-                                    Sundarban
+                                    <Typewriter
+                                        words={["Unravel", "the Mysteries", "of the", "Sundarbans"]}
+                                        loop={true}
+                                        cursor={true}
+                                        cursorStyle={"_"}
+                                    />
                                     {/* <strong className="block font-extrabold text-primary"> Next adventure!</strong> */}
                                 </h1>
                                 <p className="mt-4 text-white max-w-lg sm:text-xl/relaxed">
@@ -70,29 +76,17 @@ const Banner = () => {
                         <div className="relative mx-auto px-4 py-32 sm:px-6 lg:flex  lg:items-center lg:px-8">
                             <div className="max-w-xl text-center ltr:sm:text-left rtl:sm:text-right">
                                 <h1 className="text-3xl text-white font-extrabold sm:text-5xl">
-                                    {/* &quot;Discover your&quot; */}
-                                    Bangkok
-                                    {/* <strong className="block font-extrabold text-primary"> Next adventure!</strong> */}
+                                    <Typewriter
+                                        words={["Uncover", "the Magic", "of Bangkok"]}
+                                        loop={true}
+                                        cursor={true}
+                                        cursorStyle={"_"}
+                                    />
                                 </h1>
                                 <p className="mt-4 text-white max-w-lg sm:text-xl/relaxed">
                                     Step into a world of wonder in Bangkok, where gleaming temples, bustling markets, and serene
                                     canals create a tapestry of experiences waiting to be explored.
                                 </p>
-                                {/* <div className="mt-8 flex flex-wrap gap-4 text-center">
-                                    <a
-                                        href="#"
-                                        className="block w-full rounded bg-rose-600 px-12 py-3 text-sm font-medium text-white shadow hover:bg-rose-700 focus:outline-none focus:ring active:bg-rose-500 sm:w-auto"
-                                    >
-                                        Get Started
-                                    </a>
-
-                                    <a
-                                        href="#"
-                                        className="block w-full rounded bg-white px-12 py-3 text-sm font-medium text-rose-600 shadow hover:text-rose-700 focus:outline-none focus:ring active:text-rose-500 sm:w-auto"
-                                    >
-                                        Learn More
-                                    </a>
-                                </div> */}
                             </div>
                         </div>
                     </section>
@@ -104,29 +98,17 @@ const Banner = () => {
                         <div className="relative mx-auto px-4 py-32 sm:px-6 lg:flex  lg:items-center lg:px-8">
                             <div className="max-w-xl text-center ltr:sm:text-left rtl:sm:text-right">
                                 <h1 className="text-3xl text-white font-extrabold sm:text-5xl">
-                                    {/* &quot;Discover your&quot; */}
-                                    Langkawi
-                                    {/* <strong className="block font-extrabold text-primary"> Next adventure!</strong> */}
+                                    <Typewriter
+                                        words={["Langkawi:", "Gateway to", "Adventure"]}
+                                        loop={true}
+                                        cursor={true}
+                                        cursorStyle={"_"}
+                                    />
                                 </h1>
                                 <p className="mt-4 text-white max-w-lg sm:text-xl/relaxed">
                                     Experience the thrill of Langkawi's outdoor adventures, from zip-lining through the rainforest
                                     canopy to snorkeling in vibrant coral reefs.
                                 </p>
-                                {/* <div className="mt-8 flex flex-wrap gap-4 text-center">
-                                    <a
-                                        href="#"
-                                        className="block w-full rounded bg-rose-600 px-12 py-3 text-sm font-medium text-white shadow hover:bg-rose-700 focus:outline-none focus:ring active:bg-rose-500 sm:w-auto"
-                                    >
-                                        Get Started
-                                    </a>
-
-                                    <a
-                                        href="#"
-                                        className="block w-full rounded bg-white px-12 py-3 text-sm font-medium text-rose-600 shadow hover:text-rose-700 focus:outline-none focus:ring active:text-rose-500 sm:w-auto"
-                                    >
-                                        Learn More
-                                    </a>
-                                </div> */}
                             </div>
                         </div>
                     </section>
