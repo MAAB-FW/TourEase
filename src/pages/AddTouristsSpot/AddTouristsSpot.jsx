@@ -146,7 +146,7 @@ const AddTouristsSpot = () => {
                     </div>
                     <div className="w-full px-3 mb-6 md:w-1/3">
                         <label htmlFor="average_cost" className="block uppercase tracking-wide text-xs font-bold mb-2">
-                            Average Cost
+                            Average Cost(USD)
                         </label>
                         <input
                             name="average_cost"

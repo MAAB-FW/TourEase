@@ -8,7 +8,7 @@ const SingleTouristCard = ({ touristSpot }) => {
         _id,
         tourists_spot_name,
         image,
-        country_name,
+        // country_name,
         short_description,
         average_cost,
         seasonality,
@@ -20,8 +20,8 @@ const SingleTouristCard = ({ touristSpot }) => {
         <div>
             <div className="p-5 h-full justify-between bg-base-100 shadow-xl">
                 <div>
-                    <figure>
-                        <img className="rounded-2xl max-h-56" src={image} alt={tourists_spot_name} />
+                    <figure className="">
+                        <img className="rounded-2xl w-full min-h-56 object-cover" src={image} alt={tourists_spot_name} />
                     </figure>
                     <div className="my-4">
                         <h2 className="font-bold text-2xl">{tourists_spot_name}</h2>
