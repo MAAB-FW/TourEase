@@ -54,6 +54,7 @@ const AddTouristsSpot = () => {
                     .then((data) => {
                         console.log(data)
                         if (data.insertedId) {
+                            form.reset()
                             Swal.fire({
                                 title: "Success",
                                 text: "Tourists Spot Successfully Added",
@@ -80,6 +81,7 @@ const AddTouristsSpot = () => {
                             type="text"
                             className="appearance-none block w-full bg-gray-200 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
                             placeholder="Enter tourist spot name"
+                            required
                         />
                     </div>
                     <div className="w-full flex md:mb-6">
@@ -93,6 +95,7 @@ const AddTouristsSpot = () => {
                                 type="url"
                                 className="appearance-none block w-full bg-gray-200 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
                                 placeholder="Enter image URL"
+                                required
                             />
                         </div>
                         <div className="w-full md:w-1/2 px-3">
@@ -104,6 +107,7 @@ const AddTouristsSpot = () => {
                                 id="country_name"
                                 className="appearance-none block w-full bg-gray-200 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
                                 placeholder="Enter country name"
+                                required
                             >
                                 <option value="Bangladesh">Bangladesh</option>
                                 <option value="Thailand">Thailand</option>
@@ -124,6 +128,7 @@ const AddTouristsSpot = () => {
                             type="text"
                             className="appearance-none block w-full bg-gray-200 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
                             placeholder="Enter location"
+                            required
                         />
                     </div>
                     <div className="w-full px-3 mb-6">
@@ -133,8 +138,10 @@ const AddTouristsSpot = () => {
                         <textarea
                             name="short_description"
                             id="short_description"
+                            minLength={150}
                             className="resize-none appearance-none block w-full bg-gray-200 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
                             placeholder="Enter short description"
+                            required
                         />
                     </div>
                     <div className="w-full px-3 mb-6 md:w-1/3">
@@ -147,6 +154,7 @@ const AddTouristsSpot = () => {
                             type="text"
                             className="appearance-none block w-full bg-gray-200 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
                             placeholder="Enter average cost"
+                            required
                         />
                     </div>
                     <div className="w-full px-3 mb-6 md:w-1/3">
@@ -169,9 +177,10 @@ const AddTouristsSpot = () => {
                         <input
                             name="travel_time"
                             id="travel_time"
-                            type="text"
+                            type="number"
                             className="appearance-none block w-full bg-gray-200 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
                             placeholder="7 days"
+                            required
                         />
                     </div>
                     <div className="w-full px-3 mb-6">
@@ -184,6 +193,7 @@ const AddTouristsSpot = () => {
                             type="text"
                             className="appearance-none block w-full bg-gray-200 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
                             placeholder="Enter total visitors per year"
+                            required
                         />
                     </div>
                     {/* <div className="w-full px-3 mb-6">
@@ -199,6 +209,7 @@ const AddTouristsSpot = () => {
                             type="email"
                             className="appearance-none block w-full bg-gray-200 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
                             placeholder="Enter email"
+                            required
                         />
                     </div>
                     <div className="w-full px-3 mb-6">
@@ -211,6 +222,7 @@ const AddTouristsSpot = () => {
                             type="text"
                             className="appearance-none block w-full bg-gray-200 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
                             placeholder="Enter user name"
+                            required
                         />
                     </div> */}
                 </div>

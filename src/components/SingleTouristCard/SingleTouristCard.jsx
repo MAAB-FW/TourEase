@@ -4,31 +4,30 @@ import { Link } from "react-router-dom"
 
 const SingleTouristCard = ({ touristSpot }) => {
     console.log(touristSpot)
-    const {
-        _id,
-        tourists_spot_name,
-        image,
-        country_name,
-        short_description,
-        travel_time,
-    } = touristSpot
+    const { _id, tourists_spot_name, image, country_name, short_description, travel_time } = touristSpot
 
     return (
         <div>
-            <div className="card card-compact bg-base-100 shadow-xl">
-                <figure>
-                    <img className="rounded-2xl" src={image} alt="Shoes" />
-                </figure>
-                <div className="card-body gap-0">
-                    <h2 className="font-bold text-2xl">{tourists_spot_name}</h2>
-                    <h2 className="text-right font-bold text-rose-600 text-xl">{country_name}</h2>
-                    <p className="text-[#1f2937] font-sans">{short_description.split(" ").slice(0, 15).join(" ")}...</p>
-                    <div className="flex items-center justify-between">
-                        <p className="font-semibold">Travel Time: {travel_time}</p>
-                        <Link to={`/view-details/${_id}`} className="btn bg-[#0096ac] text-white">
-                            View Details
-                        </Link>
+            <div className="card p-5 h-full justify-between bg-base-100 shadow-xl">
+                <div>
+                    <figure>
+                        <img className="rounded-2xl max-h-56" src={image} alt={tourists_spot_name} />
+                    </figure>
+                    <div className="my-4">
+                        <h2 className="font-bold text-2xl">{tourists_spot_name}</h2>
+                        <h2 className="text-right font-bold text-rose-600 text-xl">{country_name}</h2>
+                        <p className="text-[#1f2937] font-sans overflow-hidden text-wrap">
+                            {short_description.split("").slice(0, 100).join("")}...
+                        </p>
                     </div>
+                </div>
+                <div className="flex items-center justify-between">
+                    <p className="font-semibold">
+                        Travel Time: <span className="text-success">{travel_time.split("").slice(0, 2).join("")} Days</span>
+                    </p>
+                    <Link to={`/view-details/${_id}`} className="btn bg-[#0096ac] text-white">
+                        View Details
+                    </Link>
                 </div>
             </div>
         </div>

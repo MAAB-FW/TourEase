@@ -89,7 +89,7 @@ const MyList = () => {
                                         {touristSpot.location}
                                     </td>
                                     <td className=" px-6 align-center border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                                        {touristSpot.travel_time}
+                                        {touristSpot.travel_time} Days
                                     </td>
                                     <td className="flex flex-col *:btn-sm gap-4  px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
                                         <Link to={`/update-page/${touristSpot._id}`} className="btn bg-warning">
