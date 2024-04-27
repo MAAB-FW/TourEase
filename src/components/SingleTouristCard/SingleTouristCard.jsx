@@ -4,7 +4,17 @@ import { Link } from "react-router-dom"
 
 const SingleTouristCard = ({ touristSpot }) => {
     console.log(touristSpot)
-    const { _id, tourists_spot_name, image, country_name, short_description, travel_time } = touristSpot
+    const {
+        _id,
+        tourists_spot_name,
+        image,
+        country_name,
+        short_description,
+        average_cost,
+        seasonality,
+        travel_time,
+        total_visitors_per_year,
+    } = touristSpot
 
     return (
         <div>
@@ -21,13 +31,29 @@ const SingleTouristCard = ({ touristSpot }) => {
                         </p>
                     </div>
                 </div>
-                <div className="flex items-center justify-between">
-                    <p className="font-semibold">
-                        Travel Time: <span className="text-success">{travel_time.split("").slice(0, 2).join("")} Days</span>
-                    </p>
-                    <Link to={`/view-details/${_id}`} className="btn bg-[#0096ac] text-white">
-                        View Details
-                    </Link>
+                <div>
+                    <div className=" text-slate-500">
+                        <div className="flex justify-between mb-2">
+                            <p className="">
+                                Average Cost: <span className="font-semibold text-black">{average_cost}$</span>
+                            </p>
+                            <p className="">
+                                Season: <span className="font-semibold text-black">{seasonality}</span>
+                            </p>
+                        </div>
+                        <p className="">
+                            Total Visitor: <span className="font-semibold text-black">{total_visitors_per_year}/year</span>
+                        </p>
+                    </div>
+                    <hr className="my-5"/>
+                    <div className="flex items-center justify-between">
+                        <p className="font-semibold">
+                            Travel Time: <span className="text-success">{travel_time.split("").slice(0, 2).join("")} Days</span>
+                        </p>
+                        <Link to={`/view-details/${_id}`} className="btn bg-[#0096ac] text-white">
+                            View Details
+                        </Link>
+                    </div>
                 </div>
             </div>
         </div>

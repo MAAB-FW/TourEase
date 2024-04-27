@@ -153,7 +153,7 @@ const AddTouristsSpot = () => {
                             id="average_cost"
                             type="text"
                             className="appearance-none block w-full bg-gray-200 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                            placeholder="Enter average cost"
+                            placeholder="Ex: 13,564"
                             required
                         />
                     </div>
@@ -166,20 +166,20 @@ const AddTouristsSpot = () => {
                             id="seasonality"
                             className="appearance-none block w-full bg-gray-200 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
                         >
-                            <option value="summer">Summer</option>
-                            <option value="winter">Winter</option>
+                            <option value="Summer">Summer</option>
+                            <option value="Winter">Winter</option>
                         </select>
                     </div>
                     <div className="w-full px-3 mb-6 md:w-1/3">
                         <label htmlFor="travel_time" className="block uppercase tracking-wide text-xs font-bold mb-2">
-                            Travel Time
+                            Travel Time(Days)
                         </label>
                         <input
                             name="travel_time"
                             id="travel_time"
                             type="number"
                             className="appearance-none block w-full bg-gray-200 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                            placeholder="7 days"
+                            placeholder="Ex: 7"
                             required
                         />
                     </div>
@@ -192,7 +192,7 @@ const AddTouristsSpot = () => {
                             id="total_visitors_per_year"
                             type="text"
                             className="appearance-none block w-full bg-gray-200 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                            placeholder="Enter total visitors per year"
+                            placeholder="Ex: 199,456"
                             required
                         />
                     </div>
