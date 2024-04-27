@@ -3,14 +3,14 @@ import SingleTouristCard from "../SingleTouristCard/SingleTouristCard"
 import PropTypes from "prop-types"
 
 const TouristsSpots = () => {
-    const [loadedAllData, setLoadedAllData] = useState([])
+    const [allData, setAllData] = useState([])
 
     useEffect(() => {
         fetch("http://localhost:5000/all-tourists-spot")
             .then((res) => res.json())
             .then((data) => {
                 console.log(data)
-                setLoadedAllData(data)
+                setAllData(data)
             })
     }, [])
 
@@ -21,8 +21,8 @@ const TouristsSpots = () => {
                 <p className="mt-3">Start exploring now and let the adventure begin!</p>
             </div>
             <div className="mt-16 grid gap-6 grid-cols-2 md:grid-cols-2 lg:grid-cols-3">
-                {loadedAllData?.slice(0, 6).map((touristSpot) => (
-                    <SingleTouristCard key={touristSpot._id}></SingleTouristCard>
+                {allData?.slice(0, 6).map((touristSpot) => (
+                    <SingleTouristCard key={touristSpot._id} touristSpot={touristSpot}></SingleTouristCard>
                 ))}
             </div>
         </div>

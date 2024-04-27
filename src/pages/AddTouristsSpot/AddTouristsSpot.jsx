@@ -144,7 +144,7 @@ const AddTouristsSpot = () => {
                         <input
                             name="average_cost"
                             id="average_cost"
-                            type="number"
+                            type="text"
                             className="appearance-none block w-full bg-gray-200 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
                             placeholder="Enter average cost"
                         />
@@ -181,7 +181,7 @@ const AddTouristsSpot = () => {
                         <input
                             name="total_visitors_per_year"
                             id="total_visitors_per_year"
-                            type="number"
+                            type="text"
                             className="appearance-none block w-full bg-gray-200 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
                             placeholder="Enter total visitors per year"
                         />

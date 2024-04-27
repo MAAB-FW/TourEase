@@ -99,14 +99,14 @@ const Banner = () => {
                             <div className="max-w-xl text-center ltr:sm:text-left rtl:sm:text-right">
                                 <h1 className="text-3xl text-white font-extrabold sm:text-5xl">
                                     <Typewriter
-                                        words={["Langkawi:", "Gateway to", "Adventure"]}
+                                        words={["Langkawi", "Gateway to", "Adventure"]}
                                         loop={true}
                                         cursor={true}
                                         cursorStyle={"_"}
                                     />
                                 </h1>
                                 <p className="mt-4 text-white max-w-lg sm:text-xl/relaxed">
-                                    Experience the thrill of Langkawi's outdoor adventures, from zip-lining through the rainforest
+                                    Experience the thrill of Langkawi&apos;s outdoor adventures, from zip-lining through the rainforest
                                     canopy to snorkeling in vibrant coral reefs.
                                 </p>
                             </div>

@@ -23,7 +23,7 @@ const AllTouristsSpot = () => {
             <h2 className="text-center font-bold text-3xl my-8 text-info">All Tourists Spot</h2>
             <div className="grid gap-6 grid-cols-2 md:grid-cols-2 lg:grid-cols-3">
                 {allData?.map((touristSpot) => (
-                    <SingleTouristCard key={touristSpot._id}></SingleTouristCard>
+                    <SingleTouristCard key={touristSpot._id} touristSpot={touristSpot}></SingleTouristCard>
                 ))}
             </div>
         </div>

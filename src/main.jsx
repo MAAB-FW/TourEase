@@ -14,6 +14,7 @@ import PrivateRoute from "./routes/PrivateRoute/PrivateRoute.jsx"
 import AuthProvider from "./routes/AuthProvider/AuthProvider.jsx"
 import { Toaster } from "react-hot-toast"
 import UpdatePage from "./pages/UpdatePage/UpdatePage.jsx"
+import ViewDetails from './pages/ViewDetails/ViewDetails.jsx';
 
 const router = createBrowserRouter([
     {
@@ -49,7 +50,15 @@ const router = createBrowserRouter([
             },
             {
                 path: "/update-page/:id",
-                element: <UpdatePage></UpdatePage>,
+                element: (
+                    <PrivateRoute>
+                        <UpdatePage></UpdatePage>
+                    </PrivateRoute>
+                ),
+            },
+            {
+                path: `/view-details/:id`,
+                element: <ViewDetails></ViewDetails>
             },
             {
                 path: "/login",

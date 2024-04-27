@@ -1,17 +1,33 @@
 import React from "react"
+import PropTypes from "prop-types"
+import { Link } from "react-router-dom"
 
-const SingleTouristCard = () => {
+const SingleTouristCard = ({ touristSpot }) => {
+    console.log(touristSpot)
+    const {
+        _id,
+        tourists_spot_name,
+        image,
+        country_name,
+        short_description,
+        travel_time,
+    } = touristSpot
+
     return (
         <div>
             <div className="card card-compact bg-base-100 shadow-xl">
                 <figure>
-                    <img src="https://img.freepik.com/free-photo/beautiful-seaside-landscape_23-2150423925.jpg?t=st=1714135213~exp=1714138813~hmac=7fa424322290725b7e2bc857407b32a60557d22958128b73127e4b8443e7d68f&w=740" alt="Shoes" />
+                    <img className="rounded-2xl" src={image} alt="Shoes" />
                 </figure>
-                <div className="card-body">
-                    <h2 className="card-title">Shoes!</h2>
-                    <p>If a dog chews shoes whose shoes does he choose?</p>
-                    <div className="card-actions justify-end">
-                        <button className="btn btn-primary">Buy Now</button>
+                <div className="card-body gap-0">
+                    <h2 className="font-bold text-2xl">{tourists_spot_name}</h2>
+                    <h2 className="text-right font-bold text-rose-600 text-xl">{country_name}</h2>
+                    <p className="text-[#1f2937] font-sans">{short_description.split(" ").slice(0, 15).join(" ")}...</p>
+                    <div className="flex items-center justify-between">
+                        <p className="font-semibold">Travel Time: {travel_time}</p>
+                        <Link to={`/view-details/${_id}`} className="btn bg-[#0096ac] text-white">
+                            View Details
+                        </Link>
                     </div>
                 </div>
             </div>
@@ -20,3 +36,6 @@ const SingleTouristCard = () => {
 }
 
 export default SingleTouristCard
+SingleTouristCard.propTypes = {
+    touristSpot: PropTypes.object,
+}
