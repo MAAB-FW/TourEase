@@ -8,8 +8,9 @@ const AllTouristsSpot = () => {
     console.log(allData)
     if (allData.length < 1) return <EmptyMsg></EmptyMsg>
     return (
-        <div>
-            <div className="my-16 grid gap-6 grid-cols-2 md:grid-cols-2 lg:grid-cols-3">
+        <div className="my-10 mb-20">
+            <h2 className="text-center font-bold text-3xl my-8 text-info">All Tourists Spot</h2>
+            <div className="grid gap-6 grid-cols-2 md:grid-cols-2 lg:grid-cols-3">
                 {allData?.map((touristSpot) => (
                     <SingleTouristCard key={touristSpot._id}></SingleTouristCard>
                 ))}

@@ -13,6 +13,7 @@ import Register from "./pages/Register/Register.jsx"
 import PrivateRoute from "./routes/PrivateRoute/PrivateRoute.jsx"
 import AuthProvider from "./routes/AuthProvider/AuthProvider.jsx"
 import { Toaster } from "react-hot-toast"
+import UpdatePage from "./pages/UpdatePage/UpdatePage.jsx"
 
 const router = createBrowserRouter([
     {
@@ -45,6 +46,10 @@ const router = createBrowserRouter([
                         <MyList></MyList>
                     </PrivateRoute>
                 ),
+            },
+            {
+                path: "/update-page/:id",
+                element: <UpdatePage></UpdatePage>,
             },
             {
                 path: "/login",

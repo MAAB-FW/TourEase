@@ -66,8 +66,8 @@ const AddTouristsSpot = () => {
     }
 
     return (
-        <div className="my-10">
-            <h2 className="text-center font-bold text-3xl mb-6 text-info">AddTouristsSpot</h2>
+        <div className="my-10 mb-20">
+            <h2 className="text-center font-bold text-3xl my-8 text-info">Add Tourists Spot</h2>
             <form onSubmit={handleAddTouristsSpot} className="w-full mx-auto border shadow-lg rounded-2xl p-8">
                 <div className="flex flex-wrap mb-6">
                     <div className="w-full px-3 mb-6">

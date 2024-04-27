@@ -1,30 +1,80 @@
 import React, { useContext, useEffect, useState } from "react"
 import { AuthContext } from "../../routes/AuthProvider/AuthProvider"
-import SingleTouristCard from "../../components/SingleTouristCard/SingleTouristCard"
 import EmptyMsg from "../../components/EmptyMsg/EmptyMsg"
+import Loading from "../../components/Loading/Loading"
+import { Link } from "react-router-dom"
 
 const MyList = () => {
-    const { user } = useContext(AuthContext)
+    const { user, loading, setLoading } = useContext(AuthContext)
     const [allData, setAllData] = useState([])
 
     useEffect(() => {
+        // setLoading(true)
         fetch(`http://localhost:5000/my-list/${user?.email}`)
             .then((res) => res.json())
             .then((data) => {
                 console.log(data)
                 setAllData(data)
+                // setLoading(false)
             })
-    }, [user])
+    }, [user, setLoading])
+
+    const handleDelete = (id) => {
+        
+    }
+
+    if (loading) return <Loading></Loading>
 
     if (allData.length < 1) return <EmptyMsg></EmptyMsg>
 
     return (
-        <div>
-            <div className="my-16 grid gap-6 grid-cols-2 md:grid-cols-2 lg:grid-cols-3">
-                <p>tabular form coming</p>
-                {allData?.map((touristSpot) => (
-                    <SingleTouristCard key={touristSpot._id}></SingleTouristCard>
-                ))}
+        <div className="my-10 mb-20">
+            <p className="text-center font-bold text-3xl my-8 text-info">My List</p>
+            <div className="relative my- border flex flex-col bg-white md:w-full shadow-lg rounded-xl ">
+                <div className="block w-full overflow-x-auto">
+                    <table className="items-center bg-transparent w-full border-collapse ">
+                        <thead>
+                            <tr className="*:border-t-0 *:border-l-0 *:border-r-0">
+                                <th className="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase whitespace-nowrap font-semibold text-left">
+                                    Spot name
+                                </th>
+                                <th className="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase whitespace-nowrap font-semibold text-left">
+                                    Location
+                                </th>
+                                <th className="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase whitespace-nowrap font-semibold text-left">
+                                    Travel Time
+                                </th>
+                                <th className="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase whitespace-nowrap font-semibold text-center">
+                                    Action
+                                </th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            {allData?.map((touristSpot) => (
+                                <tr key={touristSpot._id} className="border-t">
+                                    <th className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left text-blueGray-700 ">
+                                        {touristSpot.tourists_spot_name}
+                                    </th>
+                                    <td className=" px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 ">
+                                        {touristSpot.location}
+                                    </td>
+                                    <td className=" px-6 align-center border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
+                                        {touristSpot.travel_time}
+                                    </td>
+                                    <td className="flex flex-col *:btn-sm gap-4  px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
+                                        <Link to={`/update-page/${touristSpot._id}`} className="btn bg-warning">
+                                            Update
+                                        </Link>
+                                        <button onClick={handleDelete} className="btn bg-error text-white">
+                                            Delete
+                                        </button>
+                                    </td>
+                                </tr>
+                            ))}
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
     )
