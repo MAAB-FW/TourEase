@@ -45,7 +45,7 @@ const SingleTouristCard = ({ touristSpot }) => {
                             Total Visitor: <span className="font-semibold text-black">{total_visitors_per_year}/year</span>
                         </p>
                     </div>
-                    <hr className="my-5"/>
+                    <hr className="my-5" />
                     <div className="flex items-center justify-between">
                         <p className="font-semibold">
                             Travel Time: <span className="text-success">{travel_time.split("").slice(0, 2).join("")} Days</span>

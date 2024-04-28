@@ -70,7 +70,7 @@ const Banner = () => {
                     </section>
                 </SwiperSlide>
                 <SwiperSlide>
-                    <section className="relative h-[400px] md:h-[500px] bg-[url(https://img.freepik.com/free-photo/beautiful-tropical-beach-sea_74190-6716.jpg?t=st=1714133171~exp=1714136771~hmac=586416a2c319e92aea1859efa19f0c8b2d1f2ff9daff9abd4f015aa32d602fb7&w=740)] bg-cover bg-center bg-no-repeat">
+                    <section className="relative h-[400px] md:h-[500px] bg-[url(https://img.freepik.com/free-photo/wat-arun-temple-bangkok-thailand_335224-972.jpg?w=740&t=st=1714276607~exp=1714277207~hmac=5a9ee10ea3b7dfdfd0524fb1e2f57b9abd4d72d2ccd5aec50036a26a386c7ab4)] bg-cover bg-center bg-no-repeat">
                         <div className="absolute inset-0 bg-slate-700 opacity-45 //bg-white/75=sm:bg-transparent=sm:from-white/95=sm:to-white/25=ltr:sm:bg-gradient-to-r=rtl:sm:bg-gradient-to-l"></div>
 
                         <div className="relative mx-auto px-4 py-32 sm:px-6 lg:flex  lg:items-center lg:px-8">

@@ -15,6 +15,7 @@ import AuthProvider from "./routes/AuthProvider/AuthProvider.jsx"
 import { Toaster } from "react-hot-toast"
 import UpdatePage from "./pages/UpdatePage/UpdatePage.jsx"
 import ViewDetails from "./pages/ViewDetails/ViewDetails.jsx"
+import CountryPage from "./pages/CountryPage/CountryPage.jsx"
 
 const router = createBrowserRouter([
     {
@@ -58,13 +59,18 @@ const router = createBrowserRouter([
                 loader: ({ params }) => fetch(`http://localhost:5000/one-tourist-spot/${params.id}`),
             },
             {
-                path: `/view-details/:id`,
+                path: "/view-details/:id",
                 element: (
                     <PrivateRoute>
                         <ViewDetails></ViewDetails>
                     </PrivateRoute>
                 ),
                 loader: ({ params }) => fetch(`http://localhost:5000/one-tourist-spot/${params.id}`),
+            },
+            {
+                path: `/countries/:id`,
+                element: <CountryPage></CountryPage>,
+                loader: ({ params }) => fetch(`http://localhost:5000/countries/${params.id}`),
             },
             {
                 path: "/login",
