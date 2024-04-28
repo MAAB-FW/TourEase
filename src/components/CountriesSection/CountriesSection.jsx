@@ -2,14 +2,14 @@ import React, { useEffect, useState } from "react"
 import CountriesCard from "../CountriesCard/CountriesCard"
 
 const CountriesSection = () => {
-    const [countriesData, setCountriesData] = useState([])
-    console.log(countriesData)
+    const [countriesData, setCountriesData] = useState([]) 
+    // console.log(countriesData)
 
     useEffect(() => {
         fetch("http://localhost:5000/countries")
             .then((res) => res.json())
             .then((data) => {
-                console.log(data)
+                // console.log(data)
                 setCountriesData(data)
             })
     }, [])

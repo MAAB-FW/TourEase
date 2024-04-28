@@ -3,7 +3,7 @@ import PropTypes from "prop-types"
 import { Link } from "react-router-dom"
 
 const SingleTouristCard = ({ touristSpot }) => {
-    console.log(touristSpot)
+    // console.log(touristSpot)
     const {
         _id,
         tourists_spot_name,
