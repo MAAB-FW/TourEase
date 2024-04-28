@@ -41,7 +41,7 @@ const UpdatePage = () => {
             confirmButtonText: "Yes",
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`http://localhost:5000/update/${singleData._id}`, {
+                fetch(`https://maab-fw-assignment-10-server.vercel.app/update/${singleData._id}`, {
                     method: "PATCH",
                     headers: {
                         "content-type": "application/json",

@@ -9,7 +9,7 @@ const AllTouristsSpot = () => {
     console.log(allData)
 
     useEffect(() => {
-        fetch("http://localhost:5000/all-tourists-spot")
+        fetch("https://maab-fw-assignment-10-server.vercel.app/all-tourists-spot")
             .then((res) => res.json())
             .then((data) => {
                 console.log(data)

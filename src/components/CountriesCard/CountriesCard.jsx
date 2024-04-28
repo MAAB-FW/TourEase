@@ -5,7 +5,7 @@ import PropTypes from "prop-types"
 const CountriesCard = ({ country }) => {
     const { image, country_name, description } = country
     const [hover, setHover] = useState(false)
-    console.log(image)
+    
     return (
         <>
             <Link

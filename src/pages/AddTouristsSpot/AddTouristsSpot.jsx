@@ -43,7 +43,7 @@ const AddTouristsSpot = () => {
             confirmButtonText: "Yes",
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch("http://localhost:5000/add-tourists-spot", {
+                fetch("https://maab-fw-assignment-10-server.vercel.app/add-tourists-spot", {
                     method: "POST",
                     headers: {
                         "content-type": "application/json",

@@ -26,12 +26,12 @@ const router = createBrowserRouter([
             {
                 path: "/",
                 element: <Home></Home>,
-                // loader: () => fetch("http://localhost:5000/all-tourists-spot"),
+                // loader: () => fetch("https://maab-fw-assignment-10-server.vercel.app/all-tourists-spot"),
             },
             {
                 path: "/all-tourists-spot",
                 element: <AllTouristsSpot></AllTouristsSpot>,
-                // loader: () => fetch("http://localhost:5000/all-tourists-spot"),
+                // loader: () => fetch("https://maab-fw-assignment-10-server.vercel.app/all-tourists-spot"),
             },
             {
                 path: "/add-tourists-spot",
@@ -56,7 +56,7 @@ const router = createBrowserRouter([
                         <UpdatePage></UpdatePage>
                     </PrivateRoute>
                 ),
-                loader: ({ params }) => fetch(`http://localhost:5000/one-tourist-spot/${params.id}`),
+                loader: ({ params }) => fetch(`https://maab-fw-assignment-10-server.vercel.app/one-tourist-spot/${params.id}`),
             },
             {
                 path: "/view-details/:id",
@@ -65,12 +65,12 @@ const router = createBrowserRouter([
                         <ViewDetails></ViewDetails>
                     </PrivateRoute>
                 ),
-                loader: ({ params }) => fetch(`http://localhost:5000/one-tourist-spot/${params.id}`),
+                loader: ({ params }) => fetch(`https://maab-fw-assignment-10-server.vercel.app/one-tourist-spot/${params.id}`),
             },
             {
                 path: `/countries/:id`,
                 element: <CountryPage></CountryPage>,
-                loader: ({ params }) => fetch(`http://localhost:5000/countries/${params.id}`),
+                loader: ({ params }) => fetch(`https://maab-fw-assignment-10-server.vercel.app/countries/${params.id}`),
             },
             {
                 path: "/login",

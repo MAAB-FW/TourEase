@@ -11,7 +11,7 @@ const MyList = () => {
 
     useEffect(() => {
         // setLoading(true)
-        fetch(`http://localhost:5000/my-list/${user?.email}`)
+        fetch(`https://maab-fw-assignment-10-server.vercel.app/my-list/${user?.email}`)
             .then((res) => res.json())
             .then((data) => {
                 console.log(data)
@@ -32,7 +32,7 @@ const MyList = () => {
             confirmButtonText: "Yes, delete it!",
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`http://localhost:5000/delete/${id}`, {
+                fetch(`https://maab-fw-assignment-10-server.vercel.app/delete/${id}`, {
                     method: "DELETE",
                 })
                     .then((res) => res.json())
