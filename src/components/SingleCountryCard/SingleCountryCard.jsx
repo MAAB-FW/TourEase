@@ -2,20 +2,20 @@ import React from "react"
 import PropTypes from "prop-types"
 import { Link } from "react-router-dom"
 
-const SingleTouristCard = ({ touristSpot }) => {
+const SingleCountryCard = ({ touristSpot }) => {
     // console.log(touristSpot)
     const {
         _id,
         tourists_spot_name,
         image,
-        // country_name,
-        // short_description,
+        country_name,
+        location,
+        short_description,
         average_cost,
         seasonality,
-        travel_time,
-        total_visitors_per_year,
+        // travel_time,
+        // total_visitors_per_year,
     } = touristSpot
-
     return (
         <div>
             <div className="p-5 h-full justify-between bg-base-100 shadow-xl">
@@ -25,10 +25,17 @@ const SingleTouristCard = ({ touristSpot }) => {
                     </figure>
                     <div className="my-4">
                         <h2 className="font-bold text-2xl">{tourists_spot_name}</h2>
-                        {/* <h2 className="text-right font-bold text-rose-600 text-xl">{country_name}</h2> */}
-                        {/* <p className="text-[#1f2937] mt-3 font-sans overflow-hidden text-wrap">
+                        <div className="flex items-center justify-between mt-4">
+                            <p className="">
+                                <span className="font-semibold">Location: </span>
+                                {location}
+                            </p>
+                            <h2 className="text-right font-bold text-rose-600 text-xl">{country_name}</h2>
+                        </div>
+                        <hr className="my-3" />
+                        <p className="text-[#1f2937] mt-3 font-sans overflow-hidden text-wrap">
                             {short_description.split("").slice(0, 100).join("")}...
-                        </p> */}
+                        </p>
                     </div>
                 </div>
                 <div>
@@ -41,16 +48,16 @@ const SingleTouristCard = ({ touristSpot }) => {
                                 Season: <span className="font-semibold text-black">{seasonality}</span>
                             </p>
                         </div>
-                        <p className="">
+                        {/* <p className="">
                             Total Visitor: <span className="font-semibold text-black">{total_visitors_per_year}/year</span>
-                        </p>
+                        </p> */}
                     </div>
-                    <hr className="my-5" />
+                    {/* <hr className="my-5" /> */}
                     <div className="flex items-center justify-between">
-                        <p className="font-semibold">
-                            Travel Time: <span className="text-success">{travel_time} Days</span>
-                        </p>
-                        <Link to={`/view-details/${_id}`} className="btn bg-[#0096ac] text-white">
+                        {/* <p className="font-semibold">
+                            Travel Time: <span className="text-success">{travel_time.split("").slice(0, 2).join("")} Days</span>
+                        </p> */}
+                        <Link to={`/view-details/${_id}`} className="btn btn-block bg-[#0096ac] text-white">
                             View Details
                         </Link>
                     </div>
@@ -60,7 +67,7 @@ const SingleTouristCard = ({ touristSpot }) => {
     )
 }
 
-export default SingleTouristCard
-SingleTouristCard.propTypes = {
+export default SingleCountryCard
+SingleCountryCard.propTypes = {
     touristSpot: PropTypes.object,
 }
