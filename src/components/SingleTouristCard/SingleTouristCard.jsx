@@ -13,7 +13,7 @@ const SingleTouristCard = ({ touristSpot }) => {
         average_cost,
         seasonality,
         travel_time,
-        total_visitors_per_year,
+        // total_visitors_per_year,
     } = touristSpot
 
     return (
@@ -41,9 +41,9 @@ const SingleTouristCard = ({ touristSpot }) => {
                                 Season: <span className="font-semibold text-black">{seasonality}</span>
                             </p>
                         </div>
-                        <p className="">
+                        {/* <p className="">
                             Total Visitor: <span className="font-semibold text-black">{total_visitors_per_year}/year</span>
-                        </p>
+                        </p> */}
                     </div>
                     <hr className="my-5" />
                     <div className="flex items-center justify-between">

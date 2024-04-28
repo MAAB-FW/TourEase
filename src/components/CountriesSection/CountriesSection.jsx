@@ -1,18 +1,24 @@
 import React, { useEffect, useState } from "react"
 import CountriesCard from "../CountriesCard/CountriesCard"
+import Loading from "../Loading/Loading"
 
 const CountriesSection = () => {
     const [countriesData, setCountriesData] = useState([])
     // console.log(countriesData)
+    const [load, setLoad] = useState(true)
 
     useEffect(() => {
+        setLoad(true)
         fetch("https://maab-fw-assignment-10-server.vercel.app/countries")
             .then((res) => res.json())
             .then((data) => {
                 // console.log(data)
                 setCountriesData(data)
+                setLoad(false)
             })
     }, [])
+
+    if (load) return <Loading></Loading>
 
     return (
         <div className="my-24">

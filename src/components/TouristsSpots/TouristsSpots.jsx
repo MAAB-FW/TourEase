@@ -1,18 +1,26 @@
 import React, { useEffect, useState } from "react"
 import SingleTouristCard from "../SingleTouristCard/SingleTouristCard"
 import PropTypes from "prop-types"
+import Loading from "../Loading/Loading"
+import EmptyMsg from "../EmptyMsg/EmptyMsg"
 
 const TouristsSpots = () => {
     const [allData, setAllData] = useState([])
+    const [load, setLoad] = useState(true)
 
     useEffect(() => {
+        setLoad(true)
         fetch("https://maab-fw-assignment-10-server.vercel.app/all-tourists-spot")
             .then((res) => res.json())
             .then((data) => {
                 // console.log(data)
                 setAllData(data)
+                setLoad(false)
             })
     }, [])
+
+    if (load) return <Loading></Loading>
+    if (allData.length < 1) return <EmptyMsg></EmptyMsg>
 
     return (
         <div className="my-24">

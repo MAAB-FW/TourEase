@@ -6,19 +6,23 @@ import { Link } from "react-router-dom"
 import Swal from "sweetalert2"
 
 const MyList = () => {
-    const { user, loading, setLoading } = useContext(AuthContext)
+    const { user } = useContext(AuthContext)
     const [allData, setAllData] = useState([])
+    
+    const [load, setLoad] = useState(true)
 
     useEffect(() => {
-        // setLoading(true)
+        setLoad(true)
         fetch(`https://maab-fw-assignment-10-server.vercel.app/my-list/${user?.email}`)
             .then((res) => res.json())
             .then((data) => {
                 console.log(data)
                 setAllData(data)
-                // setLoading(false)
+                setLoad(false)
             })
-    }, [user, setLoading])
+    }, [user])
+
+    if (load) return <Loading></Loading>
 
     const handleDelete = (id) => {
         console.log(id)
@@ -51,8 +55,6 @@ const MyList = () => {
             }
         })
     }
-
-    if (loading) return <Loading></Loading>
 
     if (allData.length < 1) return <EmptyMsg></EmptyMsg>
 

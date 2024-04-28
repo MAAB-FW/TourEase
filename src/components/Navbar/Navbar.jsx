@@ -89,7 +89,7 @@ const Navbar = () => {
                             {navlinks}
                         </ul>
                     </div>
-                    <Link to="/" className="btn hidden md:flex btn-ghost md:text-xl">
+                    <Link to="/" className="btn md:flex btn-ghost text-xl">
                         TourEase
                     </Link>
                 </div>

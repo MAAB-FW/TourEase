@@ -2,20 +2,26 @@ import React, { useEffect, useState } from "react"
 // import { useLoaderData } from "react-router-dom"
 import SingleTouristCard from "../../components/SingleTouristCard/SingleTouristCard"
 import EmptyMsg from "../../components/EmptyMsg/EmptyMsg"
+import Loading from "../../components/Loading/Loading"
 
 const AllTouristsSpot = () => {
     // const loadedData = useLoaderData() || []
     const [allData, setAllData] = useState([])
+    const [load, setLoad] = useState(true)
     console.log(allData)
 
     useEffect(() => {
+        setLoad(true)
         fetch("https://maab-fw-assignment-10-server.vercel.app/all-tourists-spot")
             .then((res) => res.json())
             .then((data) => {
                 console.log(data)
                 setAllData(data)
+                setLoad(false)
             })
     }, [])
+
+    if (load) return <Loading></Loading>
 
     const handleSort = () => {
         const sorted = [...allData].sort((a, b) => a.average_cost - b.average_cost)
