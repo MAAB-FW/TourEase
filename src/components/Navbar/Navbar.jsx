@@ -71,7 +71,7 @@ const Navbar = () => {
             <div className="navbar bg-base-100 p-0">
                 <div className="navbar-start">
                     <div className="dropdown">
-                        <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
+                        <div tabIndex={0} role="button" className="btn btn-sm btn-ghost lg:hidden">
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
                                 className="h-5 w-5"
@@ -89,7 +89,7 @@ const Navbar = () => {
                             {navlinks}
                         </ul>
                     </div>
-                    <Link to="/" className="btn md:flex btn-ghost text-xl">
+                    <Link to="/" className="btn hidden md:flex btn-ghost font-bold md:text-2xl">
                         TourEase
                     </Link>
                 </div>
@@ -141,7 +141,7 @@ const Navbar = () => {
                                 data-tooltip-id="my-tooltip"
                                 data-tooltip-content={user.displayName}
                                 data-tooltip-place="bottom"
-                                className="border text-neutral-content text-sm rounded-full w-10"
+                                className="border text-neutral-content text-sm rounded-full w-10 z-50"
                             >
                                 <span>
                                     <img className="rounded-full" src={user.photoURL} alt="img" />

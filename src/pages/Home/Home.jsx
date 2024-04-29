@@ -1,6 +1,7 @@
 import Banner from "../../components/Banner/Banner"
 import TouristsSpots from "../../components/TouristsSpots/TouristsSpots"
 import CountriesSection from "../../components/CountriesSection/CountriesSection"
+import ContactUs from "../../components/ContactUs/ContactUs"
 // import { useLoaderData } from "react-router-dom"
 
 const Home = () => {
@@ -11,6 +12,7 @@ const Home = () => {
             <TouristsSpots></TouristsSpots>
             <CountriesSection></CountriesSection>
             {/* one extra */}
+            <ContactUs></ContactUs>
             {/* two extra */}
         </div>
     )

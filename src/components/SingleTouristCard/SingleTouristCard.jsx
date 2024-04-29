@@ -20,7 +20,7 @@ const SingleTouristCard = ({ touristSpot }) => {
         <div>
             <div className="p-5 h-full justify-between bg-base-100 shadow-xl">
                 <div>
-                    <figure className="">
+                    <figure>
                         <img className="rounded-2xl w-full min-h-56 object-cover" src={image} alt={tourists_spot_name} />
                     </figure>
                     <div className="my-4">
@@ -34,14 +34,14 @@ const SingleTouristCard = ({ touristSpot }) => {
                 <div>
                     <div className=" text-slate-500">
                         <div className="flex justify-between mb-2">
-                            <p className="">
+                            <p>
                                 Average Cost: <span className="font-semibold text-black">{average_cost}$</span>
                             </p>
-                            <p className="">
+                            <p>
                                 Season: <span className="font-semibold text-black">{seasonality}</span>
                             </p>
                         </div>
-                        <p className="">
+                        <p>
                             Total Visitor: <span className="font-semibold text-black">{total_visitors_per_year}/year</span>
                         </p>
                     </div>
