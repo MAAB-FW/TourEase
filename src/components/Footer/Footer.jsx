@@ -3,7 +3,7 @@ import { FaFacebook, FaInstagram, FaTwitter } from "react-icons/fa"
 
 const Footer = () => {
     return (
-        <div className="dark:bg-[#e7e7e7] bg-gray-900 mx-auto">
+        <div className="bg-gray-900 mx-auto">
             <footer className="w-[83%] mx-auto text-white py-8">
                 <div className=" mx-auto flex flex-wrap justify-between">
                     <div className="w-full md:w-1/3 lg:w-auto mb-8 md:mb-0">

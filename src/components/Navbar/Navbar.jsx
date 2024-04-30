@@ -67,8 +67,8 @@ const Navbar = () => {
         </>
     )
     return (
-        <div className="mt-9 md:mt-3">
-            <div className="navbar bg-base-100 p-0">
+        <div className="fixed left-0 right-0 mx-auto z-50 top-0 py-2 bg-base-100 dark:bg-gray-900 shadow-lg">
+            <div className="navbar bg-base-100 px-[5%] md:px-[8.5%]">
                 <div className="navbar-start">
                     <div className="dropdown">
                         <div tabIndex={0} role="button" className="btn btn-sm btn-ghost lg:hidden">
@@ -89,7 +89,7 @@ const Navbar = () => {
                             {navlinks}
                         </ul>
                     </div>
-                    <Link to="/" className="btn hidden md:flex btn-ghost font-bold md:text-2xl">
+                    <Link to="/" className="btn p-0 hidden md:flex btn-ghost font-bold md:text-2xl">
                         TourEase
                     </Link>
                 </div>
@@ -149,7 +149,7 @@ const Navbar = () => {
                                 <Tooltip id="my-tooltip" />
                             </div>
                             <div className="ml-2">
-                                <button onClick={handleLogout} className="btn">
+                                <button onClick={handleLogout} className="btn btn-warning">
                                     Log out
                                 </button>
                             </div>

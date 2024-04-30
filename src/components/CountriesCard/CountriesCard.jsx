@@ -12,7 +12,7 @@ const CountriesCard = ({ country }) => {
                 onMouseEnter={() => setHover(true)}
                 onMouseLeave={() => setHover(false)}
                 to={`/countries/${country_name}`}
-                className={`relative overflow-hidden border rounded-lg bg-cover bg-no-repeat bg-center h-[400px]`}
+                className={`relative overflow-hidden rounded-lg bg-cover bg-no-repeat bg-center h-[400px] border-0`}
             >
                 <img className="object-cover w-full h-full rounded-t-lg" src={image} alt="" />
                 <div
@@ -20,7 +20,7 @@ const CountriesCard = ({ country }) => {
                     ${hover ? "bg-black bg-opacity-65 duration-500" : "duration-500"}`}
                 >
                     <h5
-                        className={`mb-2 absolute text-2xl font-bold tracking-tight text-white dark:text-white ${
+                        className={`mb-2 absolute text-2xl font-bold tracking-tight text-base-100 dark:text-white ${
                             hover ? "bottom-60 duration-500" : "bottom-0 duration-500"
                         }`}
                     >
